@@ -38,7 +38,7 @@ error_reporting(0);
           <button type="submit" name="subbtn">Sign Up</button>
     
           <button type="button" class="cancelbtn"><a href="#">Cancel</a></button>
-          <button type="button" class="accexist"><a href="login.html">Already have an account?</a></button>
+          <button type="button" class="accexist"><a href="login.php">Already have an account?</a></button>
           
         </div>
       </form>
