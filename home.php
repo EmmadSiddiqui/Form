@@ -22,7 +22,7 @@ if($_SESSION["status"]!=true){
 <body>
     <div class="container">
     <h1>Welcome!</h1><hr>
-    <button class="logoutbtn" name="logout" onclick="location.href='login.php'">LogOut</button>
+    <button class="logoutbtn" name="logout" onclick="location.href='index.php'">LogOut</button>
     </div>
 </body>
 </html>
