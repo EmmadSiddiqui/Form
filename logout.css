@@ -1,0 +1,27 @@
+body{font-family: Arial, Helvetica, sans-serif}
+
+.container {
+    border: 5px solid rgb(231, 223, 223);
+    border-radius: 7px;
+    padding: 12px 20px;
+    margin: 8px 0;
+}
+
+.logoutbtn {
+    background-color: #be362c;
+    width: 100%;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+  }
+
+button:hover {
+    opacity: 0.9;
+  }
+
+h1 {
+    text-align: center;
+}
