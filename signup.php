@@ -37,8 +37,8 @@ error_reporting(0);
     
           <button type="submit" name="subbtn">Sign Up</button>
     
-          <button type="button" class="cancelbtn"><a href="#">Cancel</a></button>
-          <button type="button" class="accexist"><a href="login.php">Already have an account?</a></button>
+          <button type="button" class="cancelbtn" onclick="location.href='#'">Cancel</button>
+          <button type="button" class="accexist" onclick="location.href='login.php'">Already have an account?</button>
           
         </div>
       </form>
