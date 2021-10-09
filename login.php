@@ -22,8 +22,8 @@
     
           <button type="submit" name="subbtn">Login</button>
     
-          <button type="button" class="cancelbtn"><a href="#">Cancel</a></button>
-          <button type="button" class="accexist"><a href="login.html">Forgot Password?</a></button>
+          <button type="button" class="cancelbtn" onclick="location.href='signup.php'">Cancel</button>
+          <button type="button" class="accexist" onclick="location.href='#'">Forgot Password?</button>
           
         </div>
       </form>
