@@ -1,12 +1,9 @@
 <?php
-
 session_start();
-include("form.php");
-if($_SESSION["status"]!=true){
-    header('location: login.php');
+if(!isset($_SESSION['username'])){
+  echo 'logged out';
+  header('location:login.php');
 }
-
-
 ?>
 
 
@@ -21,16 +18,8 @@ if($_SESSION["status"]!=true){
 </head>
 <body>
     <div class="container">
-    <h1>Welcome!</h1><hr>
-    <button class="logoutbtn" name="logout" onclick="location.href='index.php'">LogOut</button>
+    <h1>Welcome <?php echo $_SESSION['username']  ?> !</h1><hr>
+    <a href="logout.php"><button class="logoutbtn" name="logout">LogOut</button></a>
     </div>
 </body>
 </html>
-
-<?php
-
-if(isset($_POST['logout'])){
-    header('location: logout.php');
-}
-
-?>
