@@ -27,7 +27,7 @@ error_reporting(0);
           <input type="email" placeholder="Enter your e-mail" name="email" required>
 
           <label for="telNo"><b>Phone Number</b></label>
-          <input type="tel" name="telNo" placeholder="+921112223334" pattern="[\+]\d{2}\d{10}" maxlength="13" minlength="13" required>
+          <input type="tel" name="telephone" placeholder="+921112223334" pattern="[\+]\d{2}\d{10}" maxlength="13" minlength="13" required>
     
           <label for="password"><b>Password</b></label>
           <input type="password" placeholder="Enter your Password" name="password" onchange="onChange()" required>
@@ -37,7 +37,7 @@ error_reporting(0);
     
           <button type="submit" name="subbtn">Sign Up</button>
     
-          <button type="button" class="cancelbtn" onclick="location.href='#'">Cancel</button>
+          <button type="button" class="cancelbtn" onclick="location.href='index.php'">Cancel</button>
           <button type="button" class="accexist" onclick="location.href='login.php'">Already have an account?</button>
           
         </div>
@@ -47,15 +47,20 @@ error_reporting(0);
 
 <?php
 
+   
+
 if(isset($_POST['subbtn']))
 {
-$un=$_POST['username'];
-$em=$_POST['email'];
-$tn=$_POST['telNo'];
-$pw=$_POST['password'];
-$cpw=$_POST['conpassword'];
+$username=$_POST['username'];
+$email=$_POST['email'];
+$telephone=$_POST['telephone'];
+$password=$_POST['password'];
+$conpassword=$_POST['conpassword'];
 
-$check_duplicate_email="SELECT email FROM signup WHERE email = '$em'";
+$pass = password_hash($password,PASSWORD_BCRYPT);
+$conpass = password_hash($conpassword,PASSWORD_BCRYPT); 
+ 
+$check_duplicate_email="SELECT email FROM signup WHERE email = '$email'";
 $result = mysqli_query($conn, $check_duplicate_email);
 $count = mysqli_num_rows($result);
 
@@ -63,18 +68,18 @@ if($count>0){
     echo '<script>alert("Accout already exist! Login now.")</script>';
     return false;
 }
-
-if($un!="" && $un!="" && $un!="" && $un!="" && $un!=""){
     
-$query="INSERT INTO SIGNUP VALUES ('$un','$em','$tn','$pw','$cpw')";
+$query="INSERT INTO `signup`(`username`, `email`, `telno`, `password`, `confirmpassword`) VALUES ('$username','$email','$telephone','$pass','$conpass')";
 $data=mysqli_query($conn,$query);
 
 if($data){
-    echo "Data inserted into a database.";
+    echo '<script>alert("SignUp Successful.")</script>';
 }
-}
+
 else{
-    echo "Failed to insert into a database.";
+    echo '<script>alert("UnSuccessful.")</script>';
 }
 }
+
+
 ?>
